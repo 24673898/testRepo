@@ -1,5 +1,4 @@
 import os
-
 import httpx
 from fastapi import APIRouter, Depends, HTTPException, status
 from pydantic import BaseModel, EmailStr
@@ -13,25 +12,28 @@ from app.utils.db import get_db
 
 router = APIRouter(prefix="/auth", tags=["Auth"])
 
-
 class RegisterRequest(BaseModel):
     username: str
     email: EmailStr
     password: str
 
-
 def _keycloak_base() -> str:
     return (os.getenv("OIDC_ISSUER") or "").replace("/realms/penflow", "")
 
-
 def _get_admin_token() -> str:
+    admin_username = os.getenv("KEYCLOAK_ADMIN_USERNAME")
+    admin_password = os.getenv("KEYCLOAK_ADMIN_PASSWORD")
+
+    if not admin_username or not admin_password:
+        raise RuntimeError("CRITICAL: Keycloak admin credentials are not set in the environment.")
+
     res = httpx.post(
         f"{_keycloak_base()}/realms/master/protocol/openid-connect/token",
         data={
             "grant_type": "password",
             "client_id": "admin-cli",
-            "username": "admin",
-            "password": "admin",
+            "username": admin_username,
+            "password": admin_password,
         },
     )
     res.raise_for_status()
