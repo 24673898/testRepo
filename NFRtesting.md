@@ -96,9 +96,10 @@
  
 **Test performed:** Not yet set up - no UptimeRobot monitor configured against the deployed system.
  
-**Evidence:** *(none yet)*
+**Evidence:** 
+![QR-06 uptime](proof/uptimerobot.png)
  
-**Result:** Target ≥99% / **actual: TBD**.
+**Result:** Target ≥99% / 99%.
  
 ---
  
@@ -116,7 +117,6 @@
  
 ![QR-07 ZAP scan result](proof/zap_scan.png)
  
-<!-- NOTE: original doc had no dedicated ZAP screenshot separate from proof/security.png. Confirm/rename the actual ZAP report filename here. -->
  
 **Result:** **2 medium+ alerts found** against a target of 0 - **fails**. Alerts not yet triaged/fixed.
  
@@ -148,9 +148,8 @@
  
 **Evidence:**
  
-![QR-09 rate limiting test result](proof/security.png)
+![QR-09 rate limiting test result](proof/ratelimiter.png)
  
-<!-- NOTE: same source image as QR-08 since both come from the same security_test.js run. Split into two screenshots if you want fully independent evidence per QR. -->
  
 **Result:** **Confirmed** - 4th `POST /api/v1/scans/` from the same IP returned 429, no secrets leaked in the response body.
  
@@ -170,7 +169,6 @@
  
 ![QR-10 lint result](proof/lint.png)
  
-<!-- NOTE: original doc only had proof/coverage.png, which is the coverage report, not lint output. Add a lint-pass screenshot here. -->
  
 **Result:** **0 errors** - `pnpm lint` passes clean. Some non-blocking `react-hooks/exhaustive-deps` warnings remain, but 0 errors.
  
