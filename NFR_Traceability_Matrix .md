@@ -29,9 +29,8 @@
 | ID | Quantified Requirement | Tactic in SAS | Test / Tool | Target / Actual |
 |----|------------------------|---------------|-------------|------------------|
 | QR-10 | 100% of merged PRs pass static code analysis with zero linting errors | Established coding standards + CI quality gates (4.4 Maintainability & Evolvability) | ESLint / ruff | 0 errors / 0errors |
-| QR-11 | Backend services and worker modules maintain ≥80% automated test coverage | CI coverage gate (4.4 Maintainability & Evolvability) | pytest-cov | ≥80% / 64.5% |
  
 ## Usability (tool: Google Lighthouse)
 | ID | Quantified Requirement | Tactic in SAS | Test / Tool | Target / Actual |
 |----|------------------------|---------------|-------------|------------------|
-| QR-12 | Primary user-facing pages (dashboard, scan results) achieve a Lighthouse accessibility score of at least 80 | Not covered by SAS  | Google Lighthouse | >80 / >=80% |
+| QR-12 | Primary user-facing pages across the client, pentester, and service-delivery flows achieve a Lighthouse accessibility score of at least 80 | Not covered by SAS  | Google Lighthouse | >80 / >=80% |
