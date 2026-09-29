@@ -115,7 +115,7 @@
  
 **Evidence:**
  
-![QR-07 ZAP scan result](proof/owasp_zap.png)
+[![QR-07 ZAP scan result](proof/owasp_zap.png)](proof/report.html)
  
  
 **Result:** **2 medium+ alerts found** against a target of 0 - . Alerts not yet triaged/fixed.
@@ -186,10 +186,9 @@
  
 **Evidence:**
  
-![QR-12 Lighthouse result](proof/googelighthouse.png)
- 
 | Page | Evidence |
 |---|---|
+| Domains | ![Domains Lighthouse result](proof/googelighthouse.png) |
 | Home | ![Home Lighthouse result](proof/home_lighthouse.png) |
 | Phase 2 Scan | ![Phase 2 Scan Lighthouse result](proof/phase2_scan_lighthousepng.png) |
 | Scan History | ![Scan History Lighthouse result](proof/scan_history_lighthouse.png) |
